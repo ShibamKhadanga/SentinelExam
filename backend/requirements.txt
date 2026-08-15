@@ -1,0 +1,29 @@
+# ─── Core Framework ───
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.0
+pydantic-settings==2.5.2
+
+# ─── Database ───
+sqlalchemy[asyncio]==2.0.35
+asyncpg==0.29.0
+alembic==1.13.2
+
+# ─── Auth ───
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.2.0
+
+# ─── File uploads ───
+python-multipart==0.0.9
+aiofiles==24.1.0
+
+# ─── ML stubs / scoring ───
+numpy==1.26.4
+scipy==1.14.1
+
+# ─── WebSocket (built into FastAPI/Starlette) ───
+websockets==12.0
+
+# ─── Utilities ───
+python-dotenv==1.0.1

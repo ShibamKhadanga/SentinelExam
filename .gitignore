@@ -1,0 +1,58 @@
+# ─── Python ───
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# ─── Virtual Environments ───
+venv/
+.venv/
+env/
+ENV/
+
+# ─── Environment Files ───
+.env
+!.env.example
+
+# ─── IDE ───
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── OS ───
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Node ───
+node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+
+# ─── Storage ───
+storage/
+backend/storage/
+
+# ─── Database ───
+*.db
+*.sqlite3
+pgdata/
+
+# ─── Docker ───
+docker-compose.override.yml
+
+# ─── Misc ───
+*.log
+*.bak
+*.tmp
+.coverage
+htmlcov/
+.pytest_cache/
