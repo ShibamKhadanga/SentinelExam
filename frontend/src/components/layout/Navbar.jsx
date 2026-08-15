@@ -45,7 +45,7 @@ export default function Navbar() {
         height: 64,
       }}>
         {/* Logo */}
-        <Link to={isInstructor ? '/dashboard' : '/student/exams'} style={{
+        <Link to="/" style={{
           display: 'flex',
           alignItems: 'center',
           gap: 10,

@@ -1,7 +1,17 @@
 import { Link } from 'react-router-dom';
 import { Shield, Keyboard, MousePointer, Camera, BarChart3, Eye, Lock, Zap, Users, ArrowRight } from 'lucide-react';
+import { useEffect } from 'react';
+import { useAuth } from '../contexts/AuthContext';
 
 export default function LandingPage() {
+  const { isAuthenticated, logout } = useAuth();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      logout();
+    }
+  }, []);
+
   const features = [
     {
       icon: <Keyboard size={28} />,

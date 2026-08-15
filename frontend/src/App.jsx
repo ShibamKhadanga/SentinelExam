@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Navbar from './components/layout/Navbar';
 import ProtectedRoute from './components/layout/ProtectedRoute';
@@ -17,17 +17,15 @@ import './index.css';
 
 function AppRoutes() {
   const { isAuthenticated, isInstructor } = useAuth();
+  const location = useLocation();
+  const isLandingPage = location.pathname === '/';
 
   return (
     <>
-      {isAuthenticated && <Navbar />}
+      {isAuthenticated && !isLandingPage && <Navbar />}
       <Routes>
         {/* Public */}
-        <Route path="/" element={isAuthenticated ? (
-          <Navigate to={isInstructor ? '/dashboard' : '/student/exams'} replace />
-        ) : (
-          <LandingPage />
-        )} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={isAuthenticated ? (
           <Navigate to={isInstructor ? '/dashboard' : '/student/exams'} replace />
         ) : (
