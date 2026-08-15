@@ -32,36 +32,36 @@ Sessions crossing a threshold are **flagged with evidence** for human instructor
 
 ```
 ┌──────────────────────────────────────────────────┐
-│                   Frontend                        │
-│         React + Vite + Tailwind CSS v4            │
-│                                                   │
+│                   Frontend                       │
+│         React + Vite + Tailwind CSS v4           │
+│                                                  │
 │  ┌────────┐ ┌──────────┐ ┌────────────────────┐  │
-│  │Landing │ │ Student  │ │  Instructor         │  │
-│  │Login   │ │ Enroll   │ │  Dashboard          │  │
-│  │Register│ │ Exam     │ │  Session Review     │  │
-│  │        │ │ Sessions │ │  Exam Management    │  │
-│  └────────┘ └──────────┘ │  Settings           │  │
-│                          └────────────────────┘   │
-│  Hooks: useKeystrokeDynamics, useMouseTracking,   │
-│         useTabVisibility, useWebSocket            │
+│  │Landing │ │ Student  │ │  Instructor        │  │
+│  │Login   │ │ Enroll   │ │  Dashboard         │  │
+│  │Register│ │ Exam     │ │  Session Review    │  │
+│  │        │ │ Sessions │ │  Exam Management   │  │
+│  └────────┘ └──────────┘ │  Settings          │  │
+│                          └────────────────────┘  │
+│  Hooks: useKeystrokeDynamics, useMouseTracking,  │
+│         useTabVisibility, useWebSocket           │
 └───────────────────┬──────────────────────────────┘
                     │ REST API + WebSocket
 ┌───────────────────┴──────────────────────────────┐
-│                   Backend                         │
-│              FastAPI (async)                      │
-│                                                   │
+│                   Backend                        │
+│              FastAPI (async)                     │
+│                                                  │
 │  ┌──────────────┐  ┌──────────────────────────┐  │
-│  │ API Routes   │  │ Scoring Engine            │  │
+│  │ API Routes   │  │ Scoring Engine           │  │
 │  │ Auth         │  │ ┌─────────────────────┐  │  │
-│  │ Enrollment   │  │ │ ScoringModelInterface│  │  │
+│  │ Enrollment   │  │ │ScoringModelInterface│  │  │
 │  │ Exams        │  │ ├─────────────────────┤  │  │
 │  │ Sessions     │  │ │ KeystrokeScorer     │  │  │
 │  │ Telemetry    │  │ │ FaceScorer          │  │  │
 │  │ Dashboard    │  │ │ GazeScorer          │  │  │
 │  │ WebSocket    │  │ │ FusionService       │  │  │
 │  └──────────────┘  │ └─────────────────────┘  │  │
-│                    └──────────────────────────┘   │
-│  SQLAlchemy (async) + Alembic + PostgreSQL        │
+│                    └──────────────────────────┘  │
+│  SQLAlchemy (async) + Alembic + PostgreSQL       │
 └──────────────────────────────────────────────────┘
 ```
 
